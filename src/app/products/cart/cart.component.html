@@ -1,0 +1,67 @@
+<!-- empty wishlist -->
+<div *ngIf="cartItems.length==0" class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col text-center">
+            <!-- empty cart image -->
+            <img style="height: 300px;" src="https://media.tenor.com/8BeuRyZSb90AAAAC/shopping-cart-shopping.gif" alt="empty wishlist image">
+            <h3 >Your cart is Empty</h3>
+            <button routerLink="/" class="btn btn-primary">Shop More</button>
+        </div>
+    </div>
+
+<!-- cart design -->
+<div *ngIf="cartItems.length!=0" class="container mb-5 mt-5">
+    <div class="row mt-5">
+        <div class="col-lg-8 border rounded p-3 mt-5">
+            <!-- cart table -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Product Image</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of cartItems; let i=index">
+                        <th>{{i+1}}</th>
+                        <th>
+                            <!-- https://cdn-icons-png.flaticon.com/512/3649/3649552.png -->
+                             <img class="ms-5" style="width: 50px;" [src]="product.image" alt="Product Image"></th>
+                        <th>
+                            <input type="num" class="form-control" value="1" style="max-width: 3rem;">
+                        </th>
+                        <th>$ {{product.price}}</th>
+                        <th>
+                            <a class="text-danger btn"><i class="fa-solid fa-trash"></i></a>
+                        </th>
+                    </tr>
+                  
+                </tbody>
+            </table>
+                <div>
+                    <button style="float: left;" class="btn btn-danger">Empty Cart</button>
+                    <a routerLink="/" style="float: right;" class="btn btn-primary">Shop More</a>
+    
+                </div>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3   rounded p-3 mt-5 ">
+        <div>
+                <p>Total : <b class="text-primary ">$ 3000</b> </p>
+                <p>Discount: <span>0</span></p>
+                <h5>Grant Total: <span>3000</span></h5>
+        </div>
+            <hr>
+           <div class="mt-5">
+            <a style="text-decoration: none; float: left;" href=""> Offers <i class="fa-solid fa-tags"></i></a>
+                <button style="float: right;"  class="btn btn-success">Check Out </button>
+                
+           </div>    
+
+        </div>
+    </div>
+
+</div>

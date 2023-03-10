@@ -1,0 +1,28 @@
+
+
+
+                                           E Commerce Website -
+
+                        Front End :Using angular
+
+            1. Create angular project - ng new project-name
+            2. Run angular project -ng Server
+            3. add bootstrap , font awsome , google fonts in index.js
+            4. Clean code app.component.html
+            5. Creeate lazy loaded module - for all products
+                ng g m module-name --route module-name --module rootModule-name
+            6. Create component
+                -header -appModule
+                -all-products -lazy loading - productsModule
+                -Cart    -   productsModule
+                -wishlist -  productsModule
+                -footer - appModule
+                -page-not-found -appModule
+                -view-products -productsModule
+            7. Set up the path for each component
+                -all-products 
+                -Cart    
+                -wishlist 
+                -page-not-found
+            8. Design component
+            9. Create Services - to make Api call
